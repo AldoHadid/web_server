@@ -1,0 +1,28 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Modified Time</th>
+            <th>Size</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fileObj in files %}
+        <tr>
+            <td>
+                <a href="{{fileObj['fLink']}}">
+                    <span>{{fileObj['name']}}</span>
+                </a>
+            </td>
+            <td>{{fileObj['mTime']}}</td>
+            <td>{{fileObj['size']}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<style>
+    table{table-layout: fixed; width: 50%;}
+    table td, th {word-wrap: break-word;}
+    th {text-align: left;}
+</style>
